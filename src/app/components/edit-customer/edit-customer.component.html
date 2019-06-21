@@ -1,0 +1,49 @@
+<div class="container col-7">
+
+  <div class="col-row">
+    <h1>Editando Cliente</h1>
+  </div>
+
+  <form action="" (ngSubmit)="editCustomer()">
+
+    <div class="form-row">
+      <div class="form-group col-6">
+        <input type="text" class="form-control" name="name" [(ngModel)]="customer.name" placeholder="Nombres" required
+          minlength="4">
+      </div>
+
+      <div class="form-group col-6">
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="customer.lastName" placeholder="Apellidos"
+          required minlength="4">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-3">
+        <select class="custom-select" [(ngModel)]="customer.sexo" [ngModelOptions]="{standalone: true}">
+          <option [ngValue]="undefined"> Sexo </option>
+          <option *ngFor="let gender of gendersList" [ngValue]="gender">{{ gender }}</option>
+        </select>
+      </div>
+
+      <div class="col-9">
+        <input type="email" class="form-control" name="email" [(ngModel)]="customer.email" placeholder="Email" required>
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="col-7">
+
+      </div>
+      <div class="col-5">
+        <button style="margin-left: 15px" type="submit" class="btn btn-success">Guardar</button>
+        <!-- <button style="margin: 5px" type="button" class="btn btn-success"
+                (click)="customerList()">Listar</button> -->
+        <button style="margin-left: 25px" type="button" class="btn btn-success"
+          (click)="cancelCustomer()">Cancelar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

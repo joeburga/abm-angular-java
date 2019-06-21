@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-hover">
+
+    <thead class="text-center">
+      <th>ID</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Sexo</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </thead>
+    <tbody>
+      <tr class="text-center" *ngFor="let customer of customers; let i = index">
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.sexo}}</td>
+        <td>{{customer.email}}</td>
+        <td>
+          <button style="margin: 5px" type="button" class="btn btn-dark"
+            (click)="deleteCustomer(customer)">Eliminar</button>
+          <button style="margin-left: 5px" type="button" class="btn btn-danger"
+            (click)="editCustomer(customer)">Modificar</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="row" *ngIf="showToggle" (flag)="toggleButtonCancel($event)" >
+      <button style="margin-left: 15px" type="button" class="btn btn-success" (click)="addCustomer()">Agregar</button>
+  <button style="margin-left: 25px" type="button" class="btn btn-success" (click)="cancelCustomer()">Volver</button>
+  </div> -->
+
+</div>
